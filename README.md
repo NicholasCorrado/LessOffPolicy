@@ -18,7 +18,7 @@ python simulate.py
 
 ## Running on CHTC
 
-See [here](https://chtc.cs.wisc.edu/uw-research-computing/python-jobs.html) for a thorough overview of how to setup jobs with CHTC.
+See [here](https://chtc.cs.wisc.edu/uw-research-computing/python-jobs.html) for a thorough overview of how to set up jobs with CHTC.
 
 Login to your CHTC submit node, and then:
 ```commandline
