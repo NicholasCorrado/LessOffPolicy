@@ -1,6 +1,7 @@
 import argparse
 import gym
 import numpy as np
+from stable_baselines3 import PPO
 
 
 def simulate(env, num_episodes):
