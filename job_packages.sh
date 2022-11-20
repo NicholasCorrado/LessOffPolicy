@@ -9,5 +9,5 @@ export PATH=$PWD/python/bin:$PATH
 mkdir packages
 export PYTHONPATH=$PWD/packages
 
-python3 -m pip install --target=$PWD/packages mujoco gym
+python3 -m pip install --target=$PWD/packages mujoco gym git+https://github.com/carlosluis/stable-baselines3@fix_tests
 tar -czf packages.tar.gz packages/
