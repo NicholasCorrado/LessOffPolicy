@@ -9,6 +9,4 @@ setup(
         'gym',
         'stable-baselines3 @ git+https://github.com/carlosluis/stable-baselines3@fix_tests'
     ],
-    dependency_links = ['']
-
 )
