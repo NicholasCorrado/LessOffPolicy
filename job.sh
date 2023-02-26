@@ -11,5 +11,10 @@ export PATH=$PWD/python/bin:$PATH
 export PYTHONPATH=$PWD/packages
 export HOME=$PWD
 
+pid=$1
+step=$2
+command=$3
+echo $params
+
 # run your script
-python3 simulate.py
+python3 -u $command --run-id $pid --seed $step
