@@ -11,7 +11,7 @@ def gen_command(env_id, num_episodes):
     mem = 1
     disk = 6
 
-    command = f"\\\"{mem},{disk},{python_command}\\\""
+    command = f"{mem},{disk},\\\"{python_command}\\\""
 
     return command
 
