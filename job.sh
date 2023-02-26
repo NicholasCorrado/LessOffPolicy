@@ -12,8 +12,12 @@ export PYTHONPATH=$PWD/packages
 export HOME=$PWD
 
 pid=$1
-step=$2
+step=$2 #ranges from 1 to num_jobs
 cmd=$3
 echo $params
 
-# run your script$(python -u $cmd)
+# run your script
+# $step ensures seeding is constistent across experiment batches
+$(python -u $cmd --run-id $pid --seed $step)
+
+tar xf results_${pid}.tar.gz results
