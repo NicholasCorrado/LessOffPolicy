@@ -1,11 +1,6 @@
 import os
 
 
-def write_to_file(f, args):
-    args = args.replace(' ', '*')
-    print(args)
-    f.write(args + "\n")
-
 def gen_command(env_id, num_episodes):
     python_command = f'simulate.py --env-id {env_id} --num-episodes {num_episodes}'
     mem = 1
@@ -26,5 +21,5 @@ if __name__ == "__main__":
     for env_id in env_ids:
         for num_episodes in [10, 20, 30]:
             command = gen_command(env_id, num_episodes)
-            write_to_file(f, command)
-
+            print(command)
+            f.write(command + "\n")
