@@ -13,8 +13,7 @@ export HOME=$PWD
 
 pid=$1
 step=$2
-command=$3
+cmd=$3
 echo $params
 
-# run your script
-python3 -u $command --run-id $pid --seed $step
+# run your script$(python -u $cmd)
