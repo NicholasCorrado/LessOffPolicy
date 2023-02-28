@@ -11,10 +11,11 @@ conda activate chtc
 git clone git@github.com:Badger-RL/chtc.git
 pip install -e chtc
 ```
-To run:
+To train an agent:
 ```commandline
-python simulate.py
+python train.py
 ```
+See `train.py` for command line arguments.
 
 ## Running on CHTC
 
@@ -23,8 +24,8 @@ See [here](https://chtc.cs.wisc.edu/uw-research-computing/python-jobs.html) for 
 Login to your CHTC submit node, and then:
 ```commandline
 git clone git@github.com:Badger-RL/chtc.git
-cd chtc
-mkdir output
+tar czvf chtc.tar.gz chtc
+cp chtc.tar.gz /staging/{username}/
 condor_submit job.sub
 ```
 Output logs (`job.err`, `job.out`, `job.log`) are written to the `output` directory. 
