@@ -2,7 +2,7 @@ import os
 
 
 def gen_command(env_id, num_episodes, learning_rate):
-    python_command = f'simulate.py --env-id {env_id}' \
+    python_command = f'train.py --env-id {env_id}' \
                      f' --num-timesteps {num_episodes}' \
                      f' --learning-rate {learning_rate}'
     mem = 1
