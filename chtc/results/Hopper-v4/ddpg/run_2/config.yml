@@ -1,0 +1,12 @@
+!!python/object:argparse.Namespace
+algo: ddpg
+env_id: Hopper-v4
+eval_episodes: 20
+eval_freq: 1000
+learning_rate: 0.001
+num_timesteps: 10000
+results_dir: results
+results_subdir: ''
+run_id: null
+save_dir: results/Hopper-v4/ddpg//run_2
+seed: 0
