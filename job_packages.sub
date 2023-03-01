@@ -3,9 +3,9 @@
 universe = vanilla
 
 executable = job_packages.sh
-log = output/job_packages.log
-output = output/job_packages.out
-error = output/job_packages.err
+log = job_packages.log
+output = job_packages.out
+error = job_packages.err
 
 # If building on CentOS 8 (Recommended)
 transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/python39.tar.gz
