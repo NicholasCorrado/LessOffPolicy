@@ -6,15 +6,17 @@ so I added some bells and whistles to make things more concrete.
 
 An brief summary of the workflow:
 
-1. Generate a list of commands `commands/hopper.txt` you want to execute (plus a few other job details):
+1. Generate a list of commands `commands/mycommands.txt` you want to execute (plus a few other job details).
+2. To run 10 seeds of each command, run `./submit.sh mycommands 10`
+3. Results are saved to `results/mycommands/`
+
+For example, if we wanted to sweep over different learning rates for the Hopper environment, `commands/mycommands.txt` may look like:
 ```commandline
 1,6,python*-u*train.py*--results-subdir*lr_0.001*--env-id*Hopper-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.001
 1,6,python*-u*train.py*--results-subdir*lr_0.0001*--env-id*Hopper-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.0001
 1,6,python*-u*train.py*--results-subdir*lr_1e-05*--env-id*Hopper-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*1e-05
 ```
 Condor doesn't like spaces, so we use asterisks instead.
-2. To run 10 seeds of each command, run `./submit.sh hopper 10`
-3. Results are saved to `results/hopper/`
 
 [//]: # (This workflow has several advantages:)
 
