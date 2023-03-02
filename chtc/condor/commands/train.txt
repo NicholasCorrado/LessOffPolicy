@@ -1,0 +1,14 @@
+1,6,python*-u*train.py*--results-subdir*lr_0.001*--env-id*Hopper-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.001
+1,6,python*-u*train.py*--results-subdir*lr_0.0001*--env-id*Hopper-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.0001
+1,6,python*-u*train.py*--results-subdir*lr_0.001*--env-id*HalfCheetah-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.001
+1,6,python*-u*train.py*--results-subdir*lr_0.0001*--env-id*HalfCheetah-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.0001
+1,6,python*-u*train.py*--results-subdir*lr_0.001*--env-id*Ant-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.001
+1,6,python*-u*train.py*--results-subdir*lr_0.0001*--env-id*Ant-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.0001
+1,6,python*-u*train.py*--results-subdir*lr_0.001*--env-id*Walker2d-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.001
+1,6,python*-u*train.py*--results-subdir*lr_0.0001*--env-id*Walker2d-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.0001
+1,6,python*-u*train.py*--results-subdir*lr_0.001*--env-id*Humanoid-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.001
+1,6,python*-u*train.py*--results-subdir*lr_0.0001*--env-id*Humanoid-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.0001
+1,6,python*-u*train.py*--results-subdir*lr_0.001*--env-id*Swimmer-v4InvertedPendulum-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.001
+1,6,python*-u*train.py*--results-subdir*lr_0.0001*--env-id*Swimmer-v4InvertedPendulum-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.0001
+1,6,python*-u*train.py*--results-subdir*lr_0.001*--env-id*InvertedDoublePendulum-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.001
+1,6,python*-u*train.py*--results-subdir*lr_0.0001*--env-id*InvertedDoublePendulum-v4*--num-timesteps*10000*--eval-freq*1000*--learning-rate*0.0001
