@@ -5,7 +5,7 @@ import yaml
 import gym
 import numpy as np
 from stable_baselines3.common.callbacks import EvalCallback
-from chtc.utils import get_latest_run_id
+from chtc.utils import get_latest_run_id, StoreDict
 
 from stable_baselines3 import A2C, DDPG, DQN, PPO, SAC, TD3
 
@@ -36,12 +36,13 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, default=0, help="seed of the experiment")
     parser.add_argument("--env-id", type=str, default="Hopper-v4", help="environment ID")
     parser.add_argument("--algo", type=str, default="ddpg", help="Aglorithm")
-    parser.add_argument("--num-timesteps", type=int, default=10000, help="Number of episodes")
-    parser.add_argument("--learning-rate", "-lr", type=int, default=1e-3, help="Number of episodes")
+    parser.add_argument("--num-timesteps", type=int, default=30000, help="Number of episodes")
 
-    parser.add_argument("--eval-freq", type=int, default=1000, help="Evaluate policy every eval_freq timesteps (or updates for on-policy algorithms)")
+    parser.add_argument("-params", "--hyperparams", type=str, nargs="+", action=StoreDict, default={}, help="Overwrite hyperparameter (e.g. learning_rate:0.01 train_freq:10)",)
+
+    parser.add_argument("--eval-freq", type=int, default=1000, help="Evaluate policy every eval_freq timesteps (or every eval_freq updates for on-policy algorithms)")
     parser.add_argument("--eval-episodes", type=int, default=20, help="Number of episodes over which policies are evaluated")
-    parser.add_argument("--results-dir", "-f", type=str, default="results", help="Directory to save results")
+    parser.add_argument("--results-dir", "-f", type=str, default="results", help="Root directory to save results")
     parser.add_argument("--results-subdir", "-s", type=str, default="", help="results will be saved to <results_dir>/<env_id>/<subdir>/")
     args = parser.parse_args()
 
@@ -66,7 +67,7 @@ if __name__ == "__main__":
     eval_env = gym.make(args.env_id)
 
     algo_class = ALGOS[args.algo]
-    agent = algo_class("MlpPolicy", env, learning_rate=args.learning_rate, verbose=0)
+    agent = algo_class("MlpPolicy", env, **args.hyperparams, verbose=0)
 
     eval_callback = EvalCallback(eval_env, n_eval_episodes=args.eval_episodes, eval_freq=args.eval_freq, log_path=save_dir, best_model_save_path=save_dir)
     train(env, agent, num_timesteps=args.num_timesteps, callbacks=[eval_callback])

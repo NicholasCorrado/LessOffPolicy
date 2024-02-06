@@ -6,18 +6,12 @@ from matplotlib import pyplot as plt
 def get_paths(results_dir, key, **kwargs):
 
     path_dict = {}
-    path_dict[key] = {
-        'paths': []
-    }
+    path_dict[key] = {'paths': []}
     for dirpath, dirnames, filenames in os.walk(results_dir):
         if 'evaluations.npz' in filenames:
             path_dict[key]['paths'].append(f'{dirpath}/evaluations.npz')
-        # path_dict[key]['x_scale'] = x_scale
-        # path_dict[key]['max_t'] = max_t
 
     return path_dict
-
-
 
 def load_data(paths):
     t = None
@@ -55,4 +49,3 @@ def plot(path_dict):
         style_kwargs = {}
         plt.plot(t, avg_of_avgs, label=agent, **style_kwargs)
         plt.fill_between(t, q05, q95, alpha=0.2)
-

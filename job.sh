@@ -29,7 +29,6 @@ echo $cmd $pid $step
 
 # run your script
 # $step ensures seeding is constistent across experiment batches
-
 $($cmd --run-id $pid --seed $step)
 
 # compress results. This file will be transferred to your submit node upon job completion.
