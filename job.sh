@@ -1,15 +1,35 @@
 #!/bin/bash
 
-# untar your Python installation. Make sure you are using the right version!
+# untar python installation and make sure the script uses it
 tar -xzf python39.tar.gz
-# (optional) if you have a set of packages (created in Part 1), untar them also
-tar -xzf packages.tar.gz
-
-# make sure the script will use your Python installation,
-# and the working directory as its home location
 export PATH=$PWD/python/bin:$PATH
+rm python39.tar.gz
+
+# fetch your packages from /staging/
+cp /staging/ncorrado/packages.tar.gz .
+tar -xzf packages.tar.gz
+rm packages.tar.gz
+# make sure python knows where your packages are
 export PYTHONPATH=$PWD/packages
-export HOME=$PWD
+
+# fetch your code from /staging/
+CODENAME=chtc
+cp /staging/ncorrado/${CODENAME}.tar.gz .
+tar -xzf ${CODENAME}.tar.gz
+rm ${CODENAME}.tar.gz
+
+cd $CODENAME
+pip install -e .
+cd $CODENAME
+
+pid=$1
+step=$2 #ranges from 0 to num_jobs-1
+cmd=$3
+echo $cmd $pid $step
 
 # run your script
-python3 simulate.py
+# $step ensures seeding is constistent across experiment batches
+$($cmd --run-id $pid --seed $step)
+
+# compress results. This file will be transferred to your submit node upon job completion.
+tar czvf results_${pid}.tar.gz results

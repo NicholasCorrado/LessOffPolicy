@@ -1,0 +1,14 @@
+1,6,train.py --env-id Hopper-v4 --num-timesteps 10000 --learning-rate 0.001
+1,6,train.py --env-id Hopper-v4 --num-timesteps 10000 --learning-rate 0.0001
+1,6,train.py --env-id HalfCheetah-v4 --num-timesteps 10000 --learning-rate 0.001
+1,6,train.py --env-id HalfCheetah-v4 --num-timesteps 10000 --learning-rate 0.0001
+1,6,train.py --env-id Ant-v4 --num-timesteps 10000 --learning-rate 0.001
+1,6,train.py --env-id Ant-v4 --num-timesteps 10000 --learning-rate 0.0001
+1,6,train.py --env-id Walker2d-v4 --num-timesteps 10000 --learning-rate 0.001
+1,6,train.py --env-id Walker2d-v4 --num-timesteps 10000 --learning-rate 0.0001
+1,6,train.py --env-id Humanoid-v4 --num-timesteps 10000 --learning-rate 0.001
+1,6,train.py --env-id Humanoid-v4 --num-timesteps 10000 --learning-rate 0.0001
+1,6,train.py --env-id Swimmer-v4InvertedPendulum-v4 --num-timesteps 10000 --learning-rate 0.001
+1,6,train.py --env-id Swimmer-v4InvertedPendulum-v4 --num-timesteps 10000 --learning-rate 0.0001
+1,6,train.py --env-id InvertedDoublePendulum-v4 --num-timesteps 10000 --learning-rate 0.001
+1,6,train.py --env-id InvertedDoublePendulum-v4 --num-timesteps 10000 --learning-rate 0.0001
