@@ -13,14 +13,15 @@ rm packages.tar.gz
 export PYTHONPATH=$PWD/packages
 
 # fetch your code from /staging/
-CODENAME=chtc
+CODENAME=LessOffPolicy
 cp /staging/ncorrado/${CODENAME}.tar.gz .
 tar -xzf ${CODENAME}.tar.gz
 rm ${CODENAME}.tar.gz
 
 cd $CODENAME
 pip install -e .
-cd $CODENAME
+pip install -e src/custom_envs
+cd src
 
 pid=$1
 step=$2 #ranges from 0 to num_jobs-1
