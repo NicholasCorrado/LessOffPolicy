@@ -84,7 +84,7 @@ export PYTHONPATH=$PWD/packages
 
 python3 -m pip install --target=$PWD/packages git+https://github.com/carlosluis/stable-baselines3@fix_tests mujoco pyyaml seaborn
 tar -czf packages.tar.gz packages/
-scp packages.tar.gz ncorrado@submit1.chtc.wisc.edu:/home/{your chtc username}/
+scp packages.tar.gz ncorrado@submit1.chtc.wisc.edu:/home/ncorrado/ # replace with your chtc info
 
 exit # exit interactive job.
 ```

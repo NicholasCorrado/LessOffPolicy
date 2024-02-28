@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='chtc',
+    name='LessOffPolicy',
     version='0.1.0',
     python_requires='>=3.9',
     # install_requires=[

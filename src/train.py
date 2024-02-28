@@ -2,12 +2,12 @@ import argparse
 import os
 
 import yaml
-import gym
+import gym, custom_envs
 import numpy as np
 from stable_baselines3.common.callbacks import EvalCallback
-from chtc.utils import get_latest_run_id, StoreDict
-
 from stable_baselines3 import A2C, DDPG, DQN, PPO, SAC, TD3
+
+from src.utils import get_latest_run_id, StoreDict
 
 ALGOS = {
     "a2c": A2C,
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-id", type=int, default=None, help='Suffix to add to save_dir')
     parser.add_argument("--seed", type=int, default=0, help="seed of the experiment")
-    parser.add_argument("--env-id", type=str, default="Hopper-v4", help="environment ID")
+    parser.add_argument("--env-id", type=str, default="Nav2d-v0", help="environment ID")
     parser.add_argument("--algo", type=str, default="ddpg", help="Aglorithm")
     parser.add_argument("--num-timesteps", type=int, default=30000, help="Number of episodes")
 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     parser.add_argument("--eval-freq", type=int, default=1000, help="Evaluate policy every eval_freq timesteps (or every eval_freq updates for on-policy algorithms)")
     parser.add_argument("--eval-episodes", type=int, default=20, help="Number of episodes over which policies are evaluated")
     parser.add_argument("--results-dir", "-f", type=str, default="results", help="Root directory to save results")
-    parser.add_argument("--results-subdir", "-s", type=str, default="", help="results will be saved to <results_dir>/<env_id>/<subdir>/")
+    parser.add_argument("--results-subdir", "-s", type=str, default="", help="results will be saved to <results_dir>/<env_id>/<algo>/<subdir>/")
     args = parser.parse_args()
 
 
