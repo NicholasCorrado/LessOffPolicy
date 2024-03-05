@@ -7,7 +7,7 @@ import numpy as np
 from stable_baselines3.common.callbacks import EvalCallback
 from stable_baselines3 import A2C, DDPG, DQN, PPO, SAC, TD3
 
-from src.utils import get_latest_run_id, StoreDict
+from utils import get_latest_run_id, StoreDict
 
 ALGOS = {
     "a2c": A2C,
