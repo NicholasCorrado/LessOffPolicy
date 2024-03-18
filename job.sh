@@ -21,6 +21,7 @@ rm ${CODENAME}.tar.gz
 cd $CODENAME
 pip install -e .
 pip install -e src/custom_envs
+pip install gymnasium imageio
 cd src
 
 pid=$1
