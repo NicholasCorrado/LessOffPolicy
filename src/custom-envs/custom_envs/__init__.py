@@ -35,24 +35,3 @@ register(
     entry_point="custom_envs.nav2d:Nav2d_H25Env",
     max_episode_steps=25, 
 )
-# Hopper 
-register(
-    id="Hopper-v4-H100",
-    entry_point="Hopper-v4",
-    max_episode_steps=100, 
-)
-register(
-    id="Nav2d-H25",
-    entry_point="custom_envs.nav2d:Nav2d_H25Env",
-    max_episode_steps=25, 
-)
-register(
-    id="Nav2d-H25",
-    entry_point="custom_envs.nav2d:Nav2d_H25Env",
-    max_episode_steps=25, 
-)
-register(
-    id="Nav2d-H25",
-    entry_point="custom_envs.nav2d:Nav2d_H25Env",
-    max_episode_steps=25, 
-)
