@@ -74,3 +74,17 @@ class Nav2dEnv(gym.Env):
         self.x = pos
         self.goal = goal
 
+class Nav2d_H100Env(Nav2dEnv): # default 0.025
+    pass
+
+class Nav2d_H75Env(Nav2dEnv):
+    def __init__(self, delta=0.025, sparse=1, d=1):
+        Nav2dEnv.__init__(self, delta=0.03125, sparse=1, d=1) # 0.025 * 1.25
+
+class Nav2d_H50Env(Nav2dEnv):
+    def __init__(self, delta=0.025, sparse=1, d=1):
+        Nav2dEnv.__init__(self, delta=0.0375, sparse=1, d=1) # 0.025 * 1.50     
+
+class Nav2d_H25Env(Nav2dEnv):
+    def __init__(self, delta=0.025, sparse=1, d=1):
+        Nav2dEnv.__init__(self, delta=0.04375, sparse=1, d=1) # 0.025 * 1.75

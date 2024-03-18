@@ -2,7 +2,8 @@ import argparse
 import os
 
 import yaml
-import gym, custom_envs
+import gymnasium as gym 
+import custom_envs
 import numpy as np
 from stable_baselines3.common.callbacks import EvalCallback
 from stable_baselines3 import A2C, DDPG, DQN, PPO, SAC, TD3
