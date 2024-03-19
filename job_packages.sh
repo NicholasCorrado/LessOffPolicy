@@ -9,5 +9,5 @@ export PATH=$PWD/python/bin:$PATH
 mkdir packages
 export PYTHONPATH=$PWD/packages
 
-python3 -m pip install --target=$PWD/packages stable-baselines3 mujoco pyyaml seaborn gymnasium imagei0
+python3 -m pip install --target=$PWD/packages stable-baselines3 mujoco pyyaml seaborn gymnasium imageio panda-gym
 tar -czf packages.tar.gz packages/
